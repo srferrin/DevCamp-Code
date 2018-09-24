@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NavBar</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        html {
+            font-family: 'Fira Sans', sans-serif;
+        }
+        .navbar {
+            background-color: red;
+        }
+
+        .navbar div {
+            display: none;
+        }
+
+        .navbar .toggle,
+        .navbar .brand {
+            display: inline-block;
+        }
+
+        .navbar .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: slategray;
+            color: white;
+        }
+
+        .navbar .link:hover,
+        .navbar .link:active {
+            color: red;
+            background: white;
+        }
+
+        .navbar .brand {
+            width: 10em;
+            text-align: center;
+            padding: 1em;
+            color: white;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .navbar .toggle {
+            padding: 1em;
+            color: black;
+        }
+
+        @media (min-width: 48em) {
+            .navbar {
+                display: flex;
+            }
+            .navbar div {
+                display: flex;
+            }
+            .navbar .left,
+            .navbar .right {
+                display: flex;
+                flex: 1;
+            }
+            .navbar .link {
+                width: auto;
+            }
+            .navbar .right {
+                justify-content: flex-end;
+            }
+            .navbar .toggle {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 48em) {
+            .navbar.active .toggle {
+                background: slategray;
+                color: white;
+            }
+            .navbar .brand {
+                text-align: left;
+            }
+            .navbar.active div {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+        <div class="navbar">
+            <a href="#" class="toggle" id="navhamburger">
+                <i class="fas fa-bars"></i> 
+            </a>
+            <a href="#" class="brand">Dons Soccer</a>
+
+            <div class="left">
+                <a href="#" class="link">Team Philosophy</a>
+                <a href="#" class="link">Years</a>
+            </div>
+
+            <div class="right">
+                <a href="#" class="link">Current Team</a>
+            </div>
+        </div>
+</body>
+
+<script>
+    const navhamburger = document.querySelector('#navhamburger');
+
+        navhamburger.addEventListener('click', (E) => {
+        navhamburger.parentElement.classList.toggle('active');
+    })
+</script>
+</html>
